@@ -1,0 +1,36 @@
+import { ConnectDB } from "@/lib/config/db";
+import { writeFile } from 'fs/promises';
+import { NextResponse } from "next/server";
+import { arrayBuffer } from "stream/consumers";
+
+
+
+const LoadDB = async () => {
+    await ConnectDB();
+}
+//ที่เราไม่เรียกฟังชั่นตรงๆเพราะเราอยากให้การ เฟด ข้อมูลเป็นขั้นเป็นตอนมากกว่าการเรียกเอง
+LoadDB();
+
+export async function GET(request){
+    console.log("Blog GET Hit")
+    return NextResponse.json({msg:"API Working"})
+}
+
+
+// function การสร้างข้อมูล ยิง re เเล้วสกัดข้อมูล
+
+
+export async function POST(request) {
+    const formData = await request.formData();
+    const timestamp = Date.now();
+
+    const image = formData.get('image');
+    const imageByteData = await image.arrayBuffer();
+    const buffer = Buffer.from(imageByteData);
+    const path = `./public/${timestamp}_${image.name}`;
+    await writeFile(path,buffer);
+    const imgURL = `/${timestamp}_${image.name}`;
+    console.log(imgURL);
+    return NextResponse.json({imgURL})
+}
+   
