@@ -20,17 +20,36 @@ export async function GET(request){
 // function การสร้างข้อมูล ยิง re เเล้วสกัดข้อมูล
 
 
+// export async function POST(request) {
+//     const formData = await request.formData();
+//     const timestamp = Date.now();
+
+//     const image = formData.get('image');
+//     const imageByteData = await image.arrayBuffer();
+//     const buffer = Buffer.from(imageByteData);
+//     const path = `./public/${timestamp}_${image.name}`;
+//     await writeFile(path,buffer);
+//     const imgURL = `/${timestamp}_${image.name}`;
+//     console.log(imgURL);
+//     return NextResponse.json({imgURL})
+// }
 export async function POST(request) {
     const formData = await request.formData();
-    const timestamp = Date.now();
-
     const image = formData.get('image');
+  
+    if (!image) {
+      return NextResponse.json({ error: 'No image file uploaded' }, { status: 400 });
+    }
+  
     const imageByteData = await image.arrayBuffer();
     const buffer = Buffer.from(imageByteData);
+    const timestamp = Date.now();
     const path = `./public/${timestamp}_${image.name}`;
-    await writeFile(path,buffer);
+  
+    await writeFile(path, buffer);
     const imgURL = `/${timestamp}_${image.name}`;
-    console.log(imgURL);
-    return NextResponse.json({imgURL})
-}
+  
+    return NextResponse.json({ imgURL });
+  }
+  
    
