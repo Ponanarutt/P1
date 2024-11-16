@@ -1,37 +1,36 @@
 import mongoose from "mongoose";
 
 const Schema = new mongoose.Schema({
-    title:{
-        type:String,
-        required:true
+    title: {
+        type: String,
+        required: true
     },
-    description:{
-        type:String,
-        required:true
+    description: {
+        type: String,
+        required: true
     },
-    category:{
-        type:String,
-        required:true
+    category: {
+        type: String,
+        required: true
     },
-    author:{
-        type:String,
-        required:true
+    author: {
+        type: String,
+        required: true
     },
-    image:{
-        type:String,
-        required:true
+    image: {
+        type: String,
+        required: true
     },
-    imageImg:{
-        type:String,
-        required:true
+    authorImg: {  // Changed from imageImg to authorImg
+        type: String,
+        required: true
     },
-    data:{
-        type:Data,
-        default:Data.now()
+    date: {
+        type: Date,
+        default: Date.now
     }
-})
+});
 
-const BlogModel = mongoose.model.blog || mongoose.model('blog',Schema);
-// สร้างบล้อคโดยใช้เเม่เเบบ schema เเต่ต้องไม่มีการสร้างไว้ละ
+const BlogModel = mongoose.models.blog || mongoose.model('blog', Schema);
 
-export default BlogModel ; 
+export default BlogModel;
