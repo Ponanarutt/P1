@@ -69,20 +69,6 @@ npm run dev
    - ลบบล็อก
 3. เมื่อมีการสร้างหรือแก้ไขบล็อก ระบบจะแสดง **การแจ้งเตือนแบบ Toast**
 
----
-
-## 📂 โครงสร้างโปรเจค
-
-\```
-P1/
-├── beginfull/
-│   ├── components/    # ไฟล์คอมโพเนนต์ของ React
-│   ├── pages/         # ไฟล์หน้าต่างๆ เช่น index.js, admin.js
-│   ├── public/        # ไฟล์ static เช่น รูปภาพ
-│   ├── styles/        # ไฟล์ CSS
-│   ├── .env           # ไฟล์ตั้งค่าการเชื่อมต่อฐานข้อมูล
-│   └── package.json   # รายการ dependencies
-\```
 
 ---
 
@@ -91,5 +77,3 @@ P1/
 
 ---
 
-## ภาพตัวอย่างโปรเจค
-![แสดงผลบล็อก](https://via.placeholder.com/1024x768?text=Example+Blog+Frontend)
