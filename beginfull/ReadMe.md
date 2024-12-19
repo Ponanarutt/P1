@@ -34,30 +34,26 @@
 ## 🚀 การติดตั้งและเริ่มต้นใช้งาน
 
 ### 1. คัดลอกโปรเจค
-\```bash
-git clone https://github.com/Ponanarutt/P1.git
-cd P1/beginfull
-\```
+    
+      git clone https://github.com/Ponanarutt/P1.git
+      cd P1/beginfull
+
 
 ### 2. ติดตั้ง dependencies
-\```bash
-npm install
-\```
+    npm install
 
-### 3. ตั้งค่าการเชื่อมต่อฐานข้อมูล MongoDB
-- สร้างไฟล์ `.env` และเพิ่ม URL ของฐานข้อมูล MongoDB:
-\```
-MONGO_URI=mongodb+srv://<username>:<password>@cluster.mongodb.net/<dbname>?retryWrites=true&w=majority
-\```
+
+### 3. ตั้งค่าการเชื่อมต่อฐาน สร้างไฟล์ `.env` และเพิ่ม URL ของฐานข้อมูล MongoDB:
+    MONGO_URI=mongodb+srv://<username>:<password>@cluster.mongodb.net/<dbname>?retryWrites=true&w=majority
+
 
 ### 4. รันโปรเจค
-\```bash
-npm run dev
-\```
+    npm run dev
+
 
 ### 5. การเข้าถึงระบบ
-- **หน้าผู้ใช้งานทั่วไป**: [http://localhost:3000](http://localhost:3000)
-- **หน้าผู้ดูแลระบบ**: [http://localhost:3000/admin](http://localhost:3000/admin)
+    - **หน้าผู้ใช้งานทั่วไป**: [http://localhost:3000](http://localhost:3000)
+    - **หน้าผู้ดูแลระบบ**: [http://localhost:3000/admin](http://localhost:3000/admin)
 
 ---
 
